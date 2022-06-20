@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.talatest.ui.view.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.talatest.ui.view.fragment.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_descriptionLoanFragment"
+            app:destination="@id/descriptionLoanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionLoanFragment"
+        android:name="com.example.talatest.ui.view.fragment.DescriptionLoanFragment"
+        android:label="DescriptionLoanFragment"
+        tools:layout="@layout/fragment_description_loan" >
+        <argument
+            android:name="loanParcelable"
+            app:argType="com.example.talatest.data.model.LoanModel" />
+    </fragment>
+</navigation>
